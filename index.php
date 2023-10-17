@@ -15,7 +15,8 @@
     <body>
         <div class="container">
             <?php
-            include_once 'helpers.php';
+            include_once 'pages/helpers.php';
+            ;
             ?>
 
             <?php

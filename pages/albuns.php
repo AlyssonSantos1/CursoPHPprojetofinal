@@ -3,15 +3,23 @@
 <div class="row">
     <?php
         $albuns = getalbuns();
-        var_dump($albuns);
+        // var_dump($albuns);
 
-        for ($i = 0; $i < 10; $i++)
+        // for ($i = 0; $i < 10; $i++)
+            foreach($albuns as $album):
+                $infoalbum = explode('/', $album);
+                $namealbum = $infoalbum[1];
+                // $imgalbum = $album . '' . $namealbum . '.jpg';
+                $imgalbum = "{$album}/{$namealbum}.jpeg";
     ?>    
     <div class="col-3">
         <a href="">
-            <img src="albuns/seila.jpeg" alt="<?=$i?>" class="img-album">
-            <h4>Album <?=$i?> </h4>
+            <img src="<?=$imgalbum?>" alt="<?=$namealbum?>" class="img-album">
+            <h4> <?=$namealbum?> </h4>
         </a>
         
-    </div>    
+    </div> 
+    <?php
+            endforeach
+    ?>
 </div>
